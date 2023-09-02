@@ -3,17 +3,16 @@ import os
 import sys
 from typing import List
 
-import cv2
+import cupy as cp
 import dlib
-import numpy as np
 import numpy.typing as npt
 from tqdm import tqdm
-import cupy as cp
 
 # モジュールのパスを追加
 sys.path.append("/home/terms/bin/FACE01_IOT_dev")
 from face01lib.api import Dlib_api
 from face01lib.utils import Utils  # type: ignore
+
 Utils_obj = Utils()
 api_obj = Dlib_api()
 
@@ -21,7 +20,6 @@ def calculate_cosine_similarity(api_obj, file_path1, file_path2):
     encoding_list = []
     for face_path in [file_path1, file_path2]:
         img = dlib.load_rgb_image(face_path)  # type: ignore
-        face_image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         face_locations: List = api_obj.face_locations(img, mode="cnn")
         face_encodings: List[npt.NDArray] = api_obj.face_encodings(
             deep_learning_model=1,
@@ -55,14 +53,15 @@ def generate_combinations(api_obj):
                     for file2 in png_files2:
                         # CPU温度が上がるので、対策
                         CPU_cnt += 1
-                        if CPU_cnt % 5 == 0:
+                        if CPU_cnt % 2 == 0:
                             # CPU温度が72度を超えていたら待機
                             Utils_obj.temp_sleep()
                             CPU_cnt = 0
                         try:
                             cos_sim = calculate_cosine_similarity(api_obj, file1, file2)
                             # CSVに出力
-                            csv_writer.writerow([file1, file2, cos_sim])
+                            if cos_sim >= 0.4:
+                                csv_writer.writerow([file1, file2, cos_sim])
                         except Exception as e:
                             print(e)
                             continue
