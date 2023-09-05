@@ -3,7 +3,7 @@
 ![](https://raw.githubusercontent.com/yKesamaru/find_similar_faces/master/assets/顔データセットの間違い探し_2.png)
 
 :::message
-こちらで紹介した方法で処理を行っていましたが、処理時間が非常に長いため、「失敗編」としました。
+こちらで紹介した方法で処理を行っていましたが、処理時間が非常に長いため、「失敗編①」としました。
 :::
 
 ## はじめに
