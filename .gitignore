@@ -5,3 +5,4 @@ include
 bin
 pyenv.cfg
 .vscode
+test

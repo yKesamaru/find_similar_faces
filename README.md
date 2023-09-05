@@ -1,6 +1,7 @@
-# 顔画像データセットの間違い探し
 
-![](assets/顔データセットの間違い探し_2.png)
+
+![](https://raw.githubusercontent.com/yKesamaru/find_similar_faces/master/assets/顔データセットの間違い探し_2.png)
+
 
 ## はじめに
 深層学習におけるモデル学習において、データセットのクレンジングは重要な作業です。
@@ -15,7 +16,7 @@
 そこで既存の顔学習モデルを使用して、各フォルダーの顔画像ファイルと、他のフォルダーに存在する顔画像ファイルとのコサイン類似度を計算し、類似度が高いものを抽出します。
 
 ### 例
-![](assets/g869.png)
+![](https://raw.githubusercontent.com/yKesamaru/find_similar_faces/master/assets/g869.png)
 この写真は佐藤真知子アナウンサーと佐藤梨那アナウンサーです。お互いのフォルダーに、お二人の写真が混在していました。自動化の網からこぼれ落ちたこのような間違いを発見することが大事です。
 
 # 手順
@@ -76,7 +77,7 @@ def generate_combinations(api_obj):
                     for file2 in png_files2:
                         # CPU温度が上がるので、対策
                         CPU_cnt += 1
-                        if CPU_cnt % 5 == 0:
+                        if CPU_cnt % 2 == 0:
                             # CPU温度が72度を超えていたら待機
                             Utils_obj.temp_sleep()
                             CPU_cnt = 0
