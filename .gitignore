@@ -6,3 +6,4 @@ bin
 pyenv.cfg
 .vscode
 test
+average_face

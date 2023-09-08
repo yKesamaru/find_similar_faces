@@ -57,12 +57,17 @@ k = 10
 D, I = index.search(all_model_data, k)
 
 # 結果を保存
+processed_pairs = set()  # 既に処理されたペアを保存するセット
 with open("output.csv", "a") as f:
     for i in range(D.shape[0]):
         for j in range(D.shape[1]):
-            # コサイン類似度が0.5以上で、同じディレクトリでない場合に出力
-            if D[i, j] >= 0.5 and all_dir_list[i] != all_dir_list[I[i, j]]:
+            # ペアをアルファベット順にソートしてタプルとして保存
+            sorted_pair = tuple(sorted([all_name_list[i], all_name_list[I[i, j]]]))
+            # コサイン類似度が0.7以上で、同じディレクトリでない場合、かつ、まだ処理されていないペアの場合に出力
+            if D[i, j] >= 0.7 and all_dir_list[i] != all_dir_list[I[i, j]] and sorted_pair not in processed_pairs:
                 f.write(f"{all_name_list[i]},{all_name_list[I[i, j]]},{D[i, j]}\n")
+                processed_pairs.add(sorted_pair)  # ペアを処理済みとしてセットに追加
+
 
 # 処理時間を計算して出力
 end_time = time.time()
