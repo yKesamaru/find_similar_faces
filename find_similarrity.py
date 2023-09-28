@@ -4,7 +4,7 @@ import faiss
 import numpy as np
 import sys
 # FACE01ライブラリのインポート
-sys.path.insert(1, '/home/terms/bin/FACE01_IOT_dev')
+sys.path.insert(1, '/home/user/bin/FACE01_IOT_dev')
 from face01lib.api import Dlib_api
 
 api = Dlib_api()
@@ -21,13 +21,13 @@ quantizer = faiss.IndexFlatIP(dimension)
 index = faiss.IndexIVFFlat(quantizer, dimension, nlist, faiss.METRIC_INNER_PRODUCT)
 
 # データのルートディレクトリ
-root_dir = "/media/terms/2TB_Movie/face_data_backup/data"
+root_dir = "/media/user/2TB_Movie/face_data_backup/data"
 # カレントディレクトリを変更
 os.chdir(root_dir)
 
 # 顔写真をロード
-face_image = api.load_image_file("/home/terms/ドキュメント/find_similar_faces/assets/woman2.png")
-# face_image = api.load_image_file("/home/terms/ドキュメント/find_similar_faces/assets/woman.png")
+face_image = api.load_image_file("/home/user/ドキュメント/find_similar_faces/assets/woman2.png")
+# face_image = api.load_image_file("/home/user/ドキュメント/find_similar_faces/assets/woman.png")
 face_location = api.face_locations(face_image, mode="cnn")
 face_encoding = api.face_encodings(
     deep_learning_model=1,
@@ -64,7 +64,7 @@ for dir in sub_dir_path_list:
 
 # データをnumpy配列に変換
 all_model_data = np.vstack(all_model_data)
-# # 量子化器を訓練し、データを追加（修正箇所）
+# # 量子化器を訓練し、データを追加
 index = faiss.IndexIVFFlat(quantizer, dimension, nlist, faiss.METRIC_INNER_PRODUCT)  # 追加; IVFインデックスを作成
 
 # 量子化器を訓練し、データを追加

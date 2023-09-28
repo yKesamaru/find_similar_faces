@@ -31,16 +31,16 @@ https://github.com/yKesamaru/find_similar_faces/blob/4eb0c208138791ce0898cee70e4
 
 ## 実行結果
 ```bash
-類似度: 0.4285, 名前: 大谷直子_vixw.jpg.png_align_resize_default.png, ディレクトリ: /media/terms/2TB_Movie/face_data_backup/data/大谷直子
-類似度: 0.3852, 名前: 岸本加世子_QIp1.jpg_default.png.png_0.png_0_align_resize.png, ディレクトリ: /media/terms/2TB_Movie/face_data_backup/data/岸本加世子
-類似度: 0.3835, 名前: 岸本加世子_9iBC.jpg.png_align_resize_default.png, ディレクトリ: /media/terms/2TB_Movie/face_data_backup/data/岸本加世子
-類似度: 0.3834, 名前: 岸本加世子_vByP.jpg.png_align_resize_default.png, ディレクトリ: /media/terms/2TB_Movie/face_data_backup/data/岸本加世子
-類似度: 0.3480, 名前: 宮崎美子_cdzk.jpg.png.png_0.png_0_align_resize.png, ディレクトリ: /media/terms/2TB_Movie/face_data_backup/data/宮崎美子
-類似度: 0.3460, 名前: 愛華みれ_rU0K.jpg..png_align_resize_default.png, ディレクトリ: /media/terms/2TB_Movie/face_data_backup/data/愛華みれ
-類似度: 0.3454, 名前: 愛華みれ_Trha.jpg..png_align_resize_default.png, ディレクトリ: /media/terms/2TB_Movie/face_data_backup/data/愛華みれ
-類似度: 0.3394, 名前: 宮崎美子_l4MT.jpg.png.png_0.png_0_align_resize.png, ディレクトリ: /media/terms/2TB_Movie/face_data_backup/data/宮崎美子
-類似度: 0.3333, 名前: 岸本加世子_qjSm.jpg_default.png.png_0.png_0_align_resize.png, ディレクトリ: /media/terms/2TB_Movie/face_data_backup/data/岸本加世子
-類似度: 0.3306, 名前: 宮崎美子_neJS.jpg.png.png.png_0.png_0_align_resize.png, ディレクトリ: /media/terms/2TB_Movie/face_data_backup/data/宮崎美子
+類似度: 0.4285, 名前: 大谷直子_vixw.jpg.png_align_resize_default.png, ディレクトリ: /media/user/2TB_Movie/face_data_backup/data/大谷直子
+類似度: 0.3852, 名前: 岸本加世子_QIp1.jpg_default.png.png_0.png_0_align_resize.png, ディレクトリ: /media/user/2TB_Movie/face_data_backup/data/岸本加世子
+類似度: 0.3835, 名前: 岸本加世子_9iBC.jpg.png_align_resize_default.png, ディレクトリ: /media/user/2TB_Movie/face_data_backup/data/岸本加世子
+類似度: 0.3834, 名前: 岸本加世子_vByP.jpg.png_align_resize_default.png, ディレクトリ: /media/user/2TB_Movie/face_data_backup/data/岸本加世子
+類似度: 0.3480, 名前: 宮崎美子_cdzk.jpg.png.png_0.png_0_align_resize.png, ディレクトリ: /media/user/2TB_Movie/face_data_backup/data/宮崎美子
+類似度: 0.3460, 名前: 愛華みれ_rU0K.jpg..png_align_resize_default.png, ディレクトリ: /media/user/2TB_Movie/face_data_backup/data/愛華みれ
+類似度: 0.3454, 名前: 愛華みれ_Trha.jpg..png_align_resize_default.png, ディレクトリ: /media/user/2TB_Movie/face_data_backup/data/愛華みれ
+類似度: 0.3394, 名前: 宮崎美子_l4MT.jpg.png.png_0.png_0_align_resize.png, ディレクトリ: /media/user/2TB_Movie/face_data_backup/data/宮崎美子
+類似度: 0.3333, 名前: 岸本加世子_qjSm.jpg_default.png.png_0.png_0_align_resize.png, ディレクトリ: /media/user/2TB_Movie/face_data_backup/data/岸本加世子
+類似度: 0.3306, 名前: 宮崎美子_neJS.jpg.png.png.png_0.png_0_align_resize.png, ディレクトリ: /media/user/2TB_Movie/face_data_backup/data/宮崎美子
 処理時間: 0分 41.79秒
 ```
 ![](https://raw.githubusercontent.com/yKesamaru/find_similar_faces/master/assets/大谷直子_vixw.jpg.png_align_resize_default.png)
