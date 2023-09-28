@@ -2,6 +2,7 @@
 import csv
 from collections import defaultdict
 
+
 def read_csv_file(filename):
     """
     CSVファイルを読み込む関数
