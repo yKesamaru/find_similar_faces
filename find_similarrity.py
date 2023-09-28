@@ -26,7 +26,8 @@ root_dir = "/media/terms/2TB_Movie/face_data_backup/data"
 os.chdir(root_dir)
 
 # 顔写真をロード
-face_image = api.load_image_file("/home/terms/ドキュメント/find_similar_faces/assets/woman.png")
+face_image = api.load_image_file("/home/terms/ドキュメント/find_similar_faces/assets/woman2.png")
+# face_image = api.load_image_file("/home/terms/ドキュメント/find_similar_faces/assets/woman.png")
 face_location = api.face_locations(face_image, mode="cnn")
 face_encoding = api.face_encodings(
     deep_learning_model=1,
