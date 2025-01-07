@@ -1,7 +1,9 @@
 import os
 import time
+
 import faiss
 import numpy as np
+from tqdm import tqdm
 
 # 処理開始時刻を記録
 start_time = time.time()
@@ -32,8 +34,9 @@ all_name_list = []
 all_dir_list = []  # ディレクトリ情報も保存
 
 # 各サブディレクトリからデータを読み込む
-for dir in sub_dir_path_list:
+for dir in tqdm(sub_dir_path_list, desc='データ読み込み中'):
     npz_file = os.path.join(dir, "npKnown.npz")
+    # print("dir:", dir)
     with np.load(npz_file) as data:
         model_data = data['efficientnetv2_arcface']
         name_list = data['name']
@@ -63,8 +66,8 @@ with open("output.csv", "a") as f:
         for j in range(D.shape[1]):
             # ペアをアルファベット順にソートしてタプルとして保存
             sorted_pair = tuple(sorted([all_name_list[i], all_name_list[I[i, j]]]))
-            # コサイン類似度が0.7以上で、同じディレクトリでない場合、かつ、まだ処理されていないペアの場合に出力
-            if D[i, j] >= 0.7 and all_dir_list[i] != all_dir_list[I[i, j]] and sorted_pair not in processed_pairs:
+            # コサイン類似度が0.85以上で、同じディレクトリでない場合、かつ、まだ処理されていないペアの場合に出力
+            if D[i, j] >= 0.85 and all_dir_list[i] != all_dir_list[I[i, j]] and sorted_pair not in processed_pairs:
                 f.write(f"{all_name_list[i]},{all_name_list[I[i, j]]},{D[i, j]}\n")
                 processed_pairs.add(sorted_pair)  # ペアを処理済みとしてセットに追加
 
